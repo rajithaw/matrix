@@ -1,6 +1,6 @@
-/*  RtwMatrix.cs -- Matrix class.
+/*  Matrix.cs -- Matrix class.
 
-    Copyright (c) 2004 by Rajitha Wimalasooriya
+    Copyright (c) 2012 by Rajitha Wimalasooriya
 */
 
 using System;
@@ -214,7 +214,7 @@ namespace Rtw
 		public static Matrix operator * (Matrix lmtx, Matrix rmtx)
 		{
 			if(lmtx.Columns != rmtx.Rows)
-				throw new RtwMatrixException("Attempt to multiply matrices with unmatching row and column indexes");
+				throw new MatrixException("Attempt to multiply matrices with unmatching row and column indexes");
 				//return null;
 
 			Matrix result = new Matrix(lmtx.Rows,rmtx.Columns);
@@ -275,7 +275,7 @@ namespace Rtw
 		public static Matrix operator / (Matrix mtx, float val)
 		{
 			if(val == 0)
-				throw new RtwMatrixException("Attempt to devide the matrix by zero");
+				throw new MatrixException("Attempt to devide the matrix by zero");
 				//return null;
 
 			Matrix result = new Matrix(mtx.Rows,mtx.Columns);
@@ -300,7 +300,7 @@ namespace Rtw
 		public static Matrix operator ^ (Matrix mtx, float val)
 		{
 			if(mtx.Rows != mtx.Columns)
-				throw new RtwMatrixException("Attempt to find the power of a non square matrix");
+				throw new MatrixException("Attempt to find the power of a non square matrix");
 				//return null;
 
 			Matrix result = mtx;
@@ -322,7 +322,7 @@ namespace Rtw
 		public static Matrix operator + (Matrix lmtx, Matrix rmtx)
 		{
 			if(lmtx.Rows != rmtx.Rows || lmtx.Columns != rmtx.Columns)
-				throw new RtwMatrixException("Attempt to add matrixes of different sizes");
+				throw new MatrixException("Attempt to add matrixes of different sizes");
 				//return null;
 
 			Matrix result = new Matrix(lmtx.Rows,lmtx.Columns);
@@ -348,7 +348,7 @@ namespace Rtw
 		{
 
 			if(lmtx.Rows != rmtx.Rows || lmtx.Columns != rmtx.Columns)
-				throw new RtwMatrixException("Attempt to subtract matrixes of different sizes");
+				throw new MatrixException("Attempt to subtract matrixes of different sizes");
 				//return null;
 
 			Matrix result = new Matrix(lmtx.Rows,lmtx.Columns);
@@ -392,7 +392,7 @@ namespace Rtw
 		public static Matrix operator ! (Matrix mtx)
 		{
 			if(mtx.Determinant() == 0)
-				throw new RtwMatrixException("Attempt to invert a singular matrix");
+				throw new MatrixException("Attempt to invert a singular matrix");
 				//return null;
 
 			// Inverse of a 2x2 matrix
@@ -425,7 +425,7 @@ namespace Rtw
 			float determinent = 0;
 
 			if(this.Rows != this.Columns)
-				throw new RtwMatrixException("Attempt to find the determinent of a non square matrix");
+				throw new MatrixException("Attempt to find the determinent of a non square matrix");
 				//return 0;
 
 			// Get the determinent of a 2x2 matrix
@@ -457,7 +457,7 @@ namespace Rtw
 		public Matrix Adjoint()
 		{
 			if(this.Rows < 2 || this.Columns < 2)
-				throw new RtwMatrixException("Adjoint matrix not available");
+				throw new MatrixException("Adjoint matrix not available");
 
 			Matrix tempMtx = new Matrix(this.Rows-1 , this.Columns-1);
 			Matrix adjMtx = new Matrix (this.Columns , this.Rows);
@@ -486,7 +486,7 @@ namespace Rtw
 		public Matrix Minor(int row, int column)
 		{
 			if(this.Rows < 2 || this.Columns < 2)
-				throw new RtwMatrixException("Minor not available");
+				throw new MatrixException("Minor not available");
 
 			int i, j = 0;
 
@@ -562,7 +562,7 @@ namespace Rtw
 		public void Reset()
 		{
 			if(m_rows != m_columns)
-				throw new RtwMatrixException("Attempt to make non square matrix identity");
+				throw new MatrixException("Attempt to make non square matrix identity");
 
 			for(int j = 0; j < 5; j++)
 			{
@@ -600,9 +600,9 @@ namespace Rtw
     /// <summary>
     /// Represents a matrix exception
     /// </summary>
-	public class RtwMatrixException : Exception
+	public class MatrixException : Exception
 	{
-		public RtwMatrixException(string message) : base(message)
+		public MatrixException(string message) : base(message)
 		{
 		}
 	}
