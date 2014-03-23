@@ -548,10 +548,17 @@ namespace Rtw
         /// <returns>True if the matrix is non singular, otherwise false</returns>
 		public bool IsInvertible()
 		{
-			if(this.Determinant() == 0)
-			{
-				return false;
-			}
+            try
+            {
+                if (this.Determinant() == 0)
+                {
+                    return false;
+                }
+            }
+            catch (MatrixException)
+            {
+                return false;
+            }
 
 			return true;
 		}
