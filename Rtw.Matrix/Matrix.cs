@@ -568,12 +568,12 @@ namespace Rtw
         /// </summary>
 		public void Reset()
 		{
-			if(m_rows != m_columns)
+			if(this.Rows != this.Columns)
 				throw new MatrixException("Attempt to make non square matrix identity");
 
-			for(int j = 0; j < 5; j++)
+			for(int j = 0; j < this.Columns; j++)
 			{
-				for(int i = 0; i < 5; i++)
+				for(int i = 0; i < this.Rows; i++)
 				{
 					if(i == j)
 					{
@@ -592,9 +592,9 @@ namespace Rtw
         /// </summary>
 		public void Clear()
 		{
-			for(int j = 0; j < 5; j++)
+			for(int j = 0; j < this.Columns; j++)
 			{
-				for(int i = 0; i < 5; i++)
+				for(int i = 0; i < this.Rows; i++)
 				{
 					this[i,j] = 0.0f;
 				}
