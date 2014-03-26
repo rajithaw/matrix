@@ -601,6 +601,25 @@ namespace Rtw
 			}
 		}
 
+        /// <summary>
+        /// Rounds the elements of the matrix to the provided percision
+        /// </summary>
+        /// <param name="mtx">Matrix to be rounded</param>
+        /// <param name="precision">Percision to be used when rounding</param>
+        /// <returns>The rounded matrix</returns>
+        public static Matrix Round(Matrix mtx, int precision)
+        {
+            for (int i = 0; i < mtx.Rows; i++)
+            {
+                for (int j = 0; j < mtx.Columns; j++)
+                {
+                    mtx[i, j] = (float)Math.Round(mtx[i, j], precision);
+                }
+            }
+
+            return mtx;
+        }
+
 		#endregion
 	}
 
