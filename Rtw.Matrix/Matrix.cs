@@ -466,7 +466,6 @@ namespace Rtw
 			{
 				for(int j = 0; j < this.Columns;j++)
 				{
-
 					tempMtx = this.Minor(i, j);
 
 					// Put the determinent of the minor in the transposed position
@@ -602,7 +601,7 @@ namespace Rtw
 		}
 
         /// <summary>
-        /// Rounds the elements of the matrix to the provided percision
+        /// Rounds the elements of the provided matrix to the given percision
         /// </summary>
         /// <param name="mtx">Matrix to be rounded</param>
         /// <param name="precision">Percision to be used when rounding</param>
@@ -618,6 +617,21 @@ namespace Rtw
             }
 
             return mtx;
+        }
+
+        /// <summary>
+        /// Rounds the elements of the current matrix to the given percision
+        /// </summary>
+        /// <param name="precision">Percision to be used when rounding</param>
+        public void Round(int precision)
+        {
+            for (int i = 0; i < this.Rows; i++)
+            {
+                for (int j = 0; j < this.Columns; j++)
+                {
+                    this[i, j] = (float)Math.Round(this[i, j], precision);
+                }
+            }
         }
 
 		#endregion
