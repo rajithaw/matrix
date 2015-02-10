@@ -321,4 +321,24 @@ public class MatrixTests
         Assert.AreEqual(result.Columns, mtx.Rows);
         Assert.AreEqual(expected, result);
     }
+
+    [TestMethod]
+    public void InverseOfANonSingularMatrix()
+    {
+        // 3x3 matrix
+        Matrix mtx = new Matrix(3, 3);
+        mtx[0, 0] = 1; mtx[0, 1] = 2; mtx[0, 2] = 3;
+        mtx[1, 0] = 0; mtx[1, 1] = 1; mtx[1, 2] = 4;
+        mtx[2, 0] = 5; mtx[2, 1] = 6; mtx[2, 2] = 0;
+
+        // Expected result is a 3x2 matrix
+        Matrix expected = new Matrix(3, 3);
+        expected[0, 0] = -24; expected[0, 1] = 18; expected[0, 2] = 5;
+        expected[1, 0] = 20; expected[1, 1] = -15; expected[1, 2] = -4;
+        expected[2, 0] = -5; expected[2, 1] = 4; expected[2, 2] = 1;
+
+        Matrix result = !mtx;
+
+        Assert.AreEqual(expected, result);
+    }
 }
