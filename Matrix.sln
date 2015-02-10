@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rtw.Matrix", "Rtw.Matrix\Rtw.Matrix.csproj", "{5E65BCC5-6D75-4361-B728-56C6CB261D70}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix", "Rtw.Matrix\Matrix.csproj", "{5E65BCC5-6D75-4361-B728-56C6CB261D70}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix.Tests", "Rtw.Matrix.Tests\Matrix.Tests.csproj", "{930612DC-1D40-45F9-9F99-E562007DDA2B}"
 EndProject

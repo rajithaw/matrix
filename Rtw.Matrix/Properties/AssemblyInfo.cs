@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Rtw.Matrix")]
+[assembly: AssemblyTitle("Matrix")]
 [assembly: AssemblyDescription("General prupose matrix class")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Rtw.Matrix")]
+[assembly: AssemblyProduct("Matrix")]
 [assembly: AssemblyCopyright("Rajitha Wimalasooriya")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]		
