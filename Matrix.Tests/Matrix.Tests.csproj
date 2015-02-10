@@ -54,7 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Rtw.Matrix\Matrix.csproj">
+    <ProjectReference Include="..\Matrix\Matrix.csproj">
       <Project>{5e65bcc5-6d75-4361-b728-56c6cb261d70}</Project>
       <Name>Matrix</Name>
     </ProjectReference>
