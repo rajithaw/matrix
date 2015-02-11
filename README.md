@@ -7,7 +7,11 @@ A general purpose matrix class which can be used for easily performing matrix ma
 **_Construction_**
 
 ```c#
-Matrix result = new Matrix(3, 3);
+Matrix mtx = new Matrix(3, 3);
+
+mtx[0, 0] = 11; mtx[0, 1] = 12; mtx[0, 2] = 13;
+mtx[1, 0] = 21; mtx[1, 1] = 22; mtx[1, 2] = 23;
+mtx[2, 0] = 31; mtx[2, 1] = 32; mtx[2, 2] = 33;
 ```
 
 **_Equality_**
