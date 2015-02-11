@@ -2,8 +2,6 @@
 
 A general purpose matrix class which can be used for easily performing matrix manupilation functions like Multiplication, Division, Addition, Substraction and finding Inverse, Determinant, Transpose etc.
 
-####Usage
-
 **_Construction_**
 
 ```c#
