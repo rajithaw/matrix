@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Matrix")]
 [assembly: AssemblyDescription("General prupose matrix class")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Rajitha Wimalasooriya")]
 [assembly: AssemblyProduct("Matrix")]
 [assembly: AssemblyCopyright("Rajitha Wimalasooriya")]
 [assembly: AssemblyTrademark("")]
